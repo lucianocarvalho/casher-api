@@ -16,10 +16,10 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('move_id')->unsigned();
+            $table->bigInteger('movimentation_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('move_id')->references('id')->on('movimentations')->onDelete('cascade');
+            $table->foreign('movimentation_id')->references('id')->on('movimentations')->onDelete('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tags');
+        Schema::dropIfExists('tags');
     }
 }

@@ -33,6 +33,6 @@ class CreateMovimentationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('movimentations');
+        Schema::dropIfExists('movimentations');
     }
 }
