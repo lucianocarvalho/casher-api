@@ -14,6 +14,7 @@ This project is being developed in conjunction with the [@VictorioDev](https://g
 
 * **[About](#about)**
 * **[Endpoints](#endpoints)**
+* **[Improvements](#improvements)**
 * **[Bugs and features](#bugs-and-features)**
 * **[Author](#author)**
 
@@ -385,6 +386,13 @@ Delete a specific movimentation.
 	"status": true
 }
 ```
+
+## Improvements:
+
+- [ ] Send a confirmation e-mail
+- [ ] Forgot my password
+- [ ] Advanced reports
+- [ ] Tests
 
 ## Bugs and features:
 
