@@ -19,7 +19,7 @@ class Movimentation extends Model
 	 * @var array
 	 */
 	protected $guarded = [
-		'id'
+		'id', 'user_id'
 	];
 
 	/**
