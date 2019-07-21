@@ -11,6 +11,6 @@ class MovimentationsTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(\App\Entities\Movimentation::class, 30)->create();
+    	factory(\App\Entities\Movimentation::class, 10)->create();
     }
 }
