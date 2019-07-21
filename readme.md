@@ -83,8 +83,6 @@ php artisan serve
 <details>
 <summary>POST /api/login</summary>
 <br>
-#### ```POST``` **/api/login**
-
 Auth login.
 
 ##### Request:
@@ -123,8 +121,6 @@ Auth login.
 <details>
 <summary>POST /api/users</summary>
 <br>
-### ```POST``` **/api/users**
-
 Register a new user.
 
 ##### Request:
@@ -159,11 +155,11 @@ Register a new user.
 ```
 </details>
 
+***
+
 <details>
 <summary>GET /api/users/exists</summary>
 <br>
-### ```GET``` **/api/users/exists**
-
 Check the existence of a user by your username, used to verify if the user already exists in the user registration.
 
 ##### Query parameters:
@@ -185,11 +181,11 @@ Check the existence of a user by your username, used to verify if the user alrea
 ```
 </details>
 
+***
+
 <details>
 <summary>DELETE /api/users/{id}</summary>
 <br>
-### ```DELETE``` **/api/users/{id}**
-
 Delete a specific user.
 
 ##### Request:
@@ -216,11 +212,11 @@ Delete a specific user.
 ```
 </details>
 
+***
+
 <details>
 <summary>PUT /api/users/{id}</summary>
 <br>
-### ```PUT``` **/api/users/{id}**
-
 Update a specific user.
 
 ##### Request:
@@ -255,11 +251,11 @@ Update a specific user.
 ```
 </details>
 
+***
+
 <details>
 <summary>GET /api/summary/{id}</summary>
 <br>
-### ```GET``` **/api/summary/{id}**
-
 Displays a user summary (monthly balance, number of entries, etc).
 
 ##### Request:
@@ -298,11 +294,11 @@ Displays a user summary (monthly balance, number of entries, etc).
 ```
 </details>
 
+***
+
 <details>
 <summary>GET /api/movimentations</summary>
 <br>
-### ```GET``` **/api/movimentations**
-
 List all movimentations of a specific user.
 
 ##### Query Parameters:
@@ -355,11 +351,11 @@ List all movimentations of a specific user.
 ```
 </details>
 
+***
+
 <details>
 <summary>POST /api/movimentations</summary>
 <br>
-### ```POST``` **/api/movimentations**
-
 Create a new movimentation.
 
 ##### Request:
@@ -389,11 +385,11 @@ Create a new movimentation.
 ```
 </details>
 
+***
+
 <details>
 <summary>DELETE /api/movimentations/{id}</summary>
 <br>
-### ```DELETE``` **/api/movimentations/{id}**
-
 Delete a specific movimentation.
 
 ##### Request:
