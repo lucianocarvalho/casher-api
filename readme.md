@@ -83,7 +83,7 @@ php artisan serve
 <details>
 <summary>POST /api/login</summary>
 <br>
-### ```POST``` **/api/login**
+#### ```POST``` **/api/login**
 
 Auth login.
 
@@ -117,6 +117,8 @@ Auth login.
 }
 ```
 </details>
+
+***
 
 <details>
 <summary>POST /api/users</summary>
