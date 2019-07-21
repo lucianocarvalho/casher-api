@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('users', 'UserController');
+Route::resource('movimentations', 'MovimentationController');
+
+Route::get('/', function () {
+	return response()->json(['message' => 'Jobs API', 'status' => 'Connected']);;
+});

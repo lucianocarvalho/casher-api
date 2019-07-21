@@ -20,9 +20,11 @@ class CreateMovimentationsTable extends Migration
             $table->double('value', 2);
             $table->dateTime('date');
             $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

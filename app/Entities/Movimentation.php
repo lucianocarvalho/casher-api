@@ -41,4 +41,14 @@ class Movimentation extends Model
         'value' => 'double',
         'date' => 'datetime'
     ];
+
+    public function user()
+    {
+    	return $this->belongsTo( App\Entities\User::class );
+    }
+
+    public function category()
+    {
+    	return $this->belongsTo( App\Entities\Category::class );
+    }
 }
