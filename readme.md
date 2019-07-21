@@ -1,6 +1,6 @@
 # Casher API
 
-Casher is an app to manage all your bills.
+Casher is an app to control all your bills.
 
 This project is being developed in conjunction with the [@VictorioDev](https://github.com/VictorioDev) for study purposes and it is separated into 3 completely different parts.
 
@@ -23,7 +23,7 @@ This project is being developed in conjunction with the [@VictorioDev](https://g
 #### Requirements:
 - **[PHP (^7.2)](https://php.net/releases/)**
 - **[Composer (^1.8.4)](https://getcomposer.org/)**
-- **[MySQL (^5.7)](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/)**
+- **[PostgreSQL (^10.9)](https://www.postgresql.org/docs/10/release-10-9.html)**
 
 #### Database schema:
 
@@ -80,6 +80,9 @@ php artisan serve
 
 ## Endpoints
 
+<details>
+<summary>POST /api/login</summary>
+<br>
 ### ```POST``` **/api/login**
 
 Auth login.
@@ -113,9 +116,11 @@ Auth login.
 	"error": "Bad login"
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>POST /api/users</summary>
+<br>
 ### ```POST``` **/api/users**
 
 Register a new user.
@@ -150,9 +155,11 @@ Register a new user.
 	"error": "Username already exists"
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>GET /api/users/exists</summary>
+<br>
 ### ```GET``` **/api/users/exists**
 
 Check the existence of a user by your username, used to verify if the user already exists in the user registration.
@@ -174,9 +181,11 @@ Check the existence of a user by your username, used to verify if the user alrea
 	"exists": false
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>DELETE /api/users/{id}</summary>
+<br>
 ### ```DELETE``` **/api/users/{id}**
 
 Delete a specific user.
@@ -203,9 +212,11 @@ Delete a specific user.
 	"error": "This user could not be deleted"
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>PUT /api/users/{id}</summary>
+<br>
 ### ```PUT``` **/api/users/{id}**
 
 Update a specific user.
@@ -240,9 +251,11 @@ Update a specific user.
 	"error": "Username can not be updated"
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>GET /api/summary/{id}</summary>
+<br>
 ### ```GET``` **/api/summary/{id}**
 
 Displays a user summary (monthly balance, number of entries, etc).
@@ -281,9 +294,11 @@ Displays a user summary (monthly balance, number of entries, etc).
 	]
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>GET /api/movimentations</summary>
+<br>
 ### ```GET``` **/api/movimentations**
 
 List all movimentations of a specific user.
@@ -336,9 +351,11 @@ List all movimentations of a specific user.
 	]
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>POST /api/movimentations</summary>
+<br>
 ### ```POST``` **/api/movimentations**
 
 Create a new movimentation.
@@ -368,9 +385,11 @@ Create a new movimentation.
 	"date": "2019-08-20"
 }
 ```
+</details>
 
-***
-
+<details>
+<summary>DELETE /api/movimentations/{id}</summary>
+<br>
 ### ```DELETE``` **/api/movimentations/{id}**
 
 Delete a specific movimentation.
@@ -386,10 +405,12 @@ Delete a specific movimentation.
 	"status": true
 }
 ```
+</details>
 
 ## Improvements:
 
-- [ ] Send a confirmation e-mail
+- [ ] Setup an API authentication method (JWT or OAuth)
+- [ ] Send a confirmation email
 - [ ] Forgot my password
 - [ ] Advanced reports
 - [ ] Tests
