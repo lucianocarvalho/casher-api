@@ -97,4 +97,29 @@ class UserController extends Controller
         	'status' => true
         ], 204);
 	}
+
+	/**
+	 * Login method.
+	 * @param  Request $request
+	 * @return Illuminate\Http\JsonResponse
+	 */
+	public function login( Request $request )
+	{
+		$users = User::where('email', $request->email )
+					->where('password', $request->password )
+					->get();
+
+		if( $users->count() ) {
+			return response()->json([
+				'status' => true,
+				'name' => $users->first()->name,
+				'email' => $users->first()->email
+            ], 200 );
+		}
+
+		return response()->json([
+        	'status' => false,
+        	'error' => 'Bad credentials'
+        ], 400 );
+	}
 }
