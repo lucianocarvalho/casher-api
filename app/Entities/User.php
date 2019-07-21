@@ -28,7 +28,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'email', 'password'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -37,6 +37,7 @@ class User extends Model
      * @var array
      */
     protected $casts = [
+        'name' => 'string',
         'email' => 'string',
         'password' => 'string'
     ];
