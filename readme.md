@@ -90,7 +90,7 @@ Auth login.
 ```POST /api/login```
 ```json
 {
-	"username":"lucianocarvalho",
+	"email":"lucianocarvalho@example.net",
 	"password":"e10adc3949ba59abbe56e057f20f883e"
 }
 ```
@@ -101,7 +101,8 @@ Auth login.
 {
 	"status": true,
 	"user_id": 1,
-	"username": "lucianocarvalho"
+	"name":"Luciano Carvalho",
+	"email":"lucianocarvalho@example.net"
 }
 ```
 
@@ -128,7 +129,8 @@ Register a new user.
 ```POST /api/users```
 ```json
 {
-	"username":"lucianocarvalho",
+	"name":"Luciano Carvalho",
+	"email":"lucianocarvalho@example.net",
 	"password":"e10adc3949ba59abbe56e057f20f883e"
 }
 ```
@@ -140,7 +142,8 @@ Register a new user.
 {
 	"id": 1,
 	"status": true,
-	"username":"lucianocarvalho"
+	"name":"Luciano Carvalho",
+	"email":"lucianocarvalho@example.net"
 }
 ```
 
@@ -150,33 +153,7 @@ Register a new user.
 ```json
 {
 	"status": false,
-	"error": "Username already exists"
-}
-```
-</details>
-
-***
-
-<details>
-<summary>GET /api/users/exists</summary>
-<br>
-Check the existence of a user by your username, used to verify if the user already exists in the user registration.
-
-##### Query parameters:
-
-```?username```: username entered by the user.
-
-##### Request:
-
-```GET /api/users/exists?username=lucianocarvalho```
-
-
-##### Response:
-
-```Status Code: 201```
-```json
-{
-	"exists": false
+	"error": "E-mail already exists"
 }
 ```
 </details>
@@ -224,7 +201,8 @@ Update a specific user.
 ```PUT /api/users/1```
 ```json
 {
-	"username":"victoriodev",
+	"name":"Victorio Zansavio",
+	"email":"victoriodev@example.net",
 	"password":"e10adc3949ba59abbe56e057f20f883e"
 }
 ```
@@ -234,9 +212,10 @@ Update a specific user.
 ```Status Code: 201```
 ```json
 {
-	"id": 1,
 	"status": true,
-	"username":"victoriodev"
+	"id": 1,
+	"name":"Victorio Zansavio",
+	"email":"victoriodev@example.net"
 }
 ```
 
@@ -246,7 +225,7 @@ Update a specific user.
 ```json
 {
 	"status": false,
-	"error": "Username can not be updated"
+	"error": "User can not be updated"
 }
 ```
 </details>
@@ -272,22 +251,25 @@ Displays a user summary (monthly balance, number of entries, etc).
 	"entries": 23,
 	"last_entries": [
 		{
+			"id": 3,
 			"type": "D",
 			"name": "Car repair",
 			"value": 200,
-			"date": "2019-07-01"
+			"date": "2019-07-01 23:52:02"
 		},
 		{
+			"id": 2,
 			"type": "C",
 			"name": "Salary",
 			"value": 5500.27,
-			"date": "2019-06-24"
+			"date": "2019-06-24 21:19:43"
 		},
 		{
+			"id": 1,
 			"type": "D",
 			"name": "Lunch",
 			"value": 39.90,
-			"date": "2019-06-14"
+			"date": "2019-06-14 13:34:43"
 		}
 	]
 }
@@ -297,13 +279,11 @@ Displays a user summary (monthly balance, number of entries, etc).
 ***
 
 <details>
-<summary>GET /api/movimentations</summary>
+<summary>GET /api/movimentations/{id}</summary>
 <br>
 List all movimentations of a specific user.
 
 ##### Query Parameters:
-
-`?user_id`: specific user **(required field)**
 
 `?order_by`: order by a specific field.
 
@@ -315,7 +295,7 @@ List all movimentations of a specific user.
 
 ##### Request:
 
-```GET /api/movimentations?user_id=1```
+```GET /api/movimentations/1```
 
 ##### Response:
 
@@ -330,21 +310,21 @@ List all movimentations of a specific user.
 			"type": "D",
 			"name": "Car repair",
 			"value": 200,
-			"date": "2019-07-01"
+			"date": "2019-07-01 23:52:02"
 		},
 		{
 			"id": 2,
 			"type": "C",
 			"name": "Salary",
 			"value": 5500.27,
-			"date": "2019-06-24"
+			"date": "2019-06-24 21:19:43"
 		},
 		{
 			"id": 1,
 			"type": "D",
 			"name": "Lunch",
 			"value": 39.90,
-			"date": "2019-06-14"
+			"date": "2019-06-14 13:34:43"
 		}
 	]
 }
@@ -367,7 +347,7 @@ Create a new movimentation.
 	"type": "D",
 	"name": "Foo bar",
 	"value": 99.21,
-	"date": "2019-08-20"
+	"date": "2019-08-20 21:23:12"
 }
 ```
 
@@ -380,7 +360,7 @@ Create a new movimentation.
 	"type": "D",
 	"name": "Foo bar",
 	"value": 99.21,
-	"date": "2019-08-20"
+	"date": "2019-08-20 21:23:12"
 }
 ```
 </details>
