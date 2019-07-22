@@ -1,6 +1,6 @@
 # Casher API
 
-Casher is an app to control all your bills.
+Casher is an app to manage all your bills.
 
 This project is being developed in conjunction with the [@VictorioDev](https://github.com/VictorioDev) for study purposes and it is separated into 3 completely different parts.
 
