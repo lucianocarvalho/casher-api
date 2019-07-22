@@ -112,6 +112,7 @@ class UserController extends Controller
 		if( $users->count() ) {
 			return response()->json([
 				'status' => true,
+				'user_id' => $users->first()->id,
 				'name' => $users->first()->name,
 				'email' => $users->first()->email
             ], 200 );
