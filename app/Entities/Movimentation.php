@@ -19,7 +19,7 @@ class Movimentation extends Model
 	 * @var array
 	 */
 	protected $guarded = [
-		'id', 'user_id'
+		'id'
 	];
 
 	/**
@@ -28,7 +28,7 @@ class Movimentation extends Model
 	 * @var array
 	 */
 	protected $fillable = [
-		'type', 'value', 'date', 'category_id'
+		'type', 'name', 'value', 'date', 'category_id', 'user_id'
 	];
 
 	/**

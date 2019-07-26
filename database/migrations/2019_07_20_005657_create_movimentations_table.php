@@ -19,7 +19,7 @@ class CreateMovimentationsTable extends Migration
             $table->string('name');
             $table->double('value', 2);
             $table->dateTime('date');
-            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
 
