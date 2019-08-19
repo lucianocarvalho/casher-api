@@ -385,6 +385,89 @@ Delete a specific movimentation.
 ```
 </details>
 
+***
+
+<details>
+<summary>GET /api/categories/list/{user_id}</summary>
+<br>
+List all categories from a specific user.
+
+##### Request:
+
+```GET /api/categories/list/2```
+
+##### Response:
+```Status Code: 200```
+```json
+[
+	{
+		"id": 1,
+		"name": "Car",
+		"user_id": 2,
+		"created_at": "2019-07-26 02:47:39",
+		"updated_at": "2019-07-26 02:47:39"
+	},
+	{
+		"id": 2,
+		"name": "Food",
+		"user_id": 2,
+		"created_at": "2019-07-26 03:04:13",
+		"updated_at": "2019-07-26 03:04:13"
+	}
+]
+```
+</details>
+
+***
+
+<details>
+<summary>POST /api/categories</summary>
+<br>
+Create a new category.
+
+##### Request:
+
+```POST /api/categories```
+```json
+{
+	"name": "Uber",
+	"user_id": 2
+}
+```
+
+##### Response:
+```Status Code: 201```
+```json
+{
+    "name": "Uber",
+    "user_id": "2",
+    "updated_at": "2019-08-19 23:56:48",
+    "created_at": "2019-08-19 23:56:48",
+    "id": 4
+}
+```
+</details>
+
+***
+
+<details>
+<summary>DELETE /api/categories/{id}</summary>
+<br>
+Delete a specific category.
+
+##### Request:
+
+```DELETE /api/categories/1```
+
+##### Response:
+```Status Code: 204```
+```json
+{
+    "status": true
+}
+```
+</details>
+
 ## Improvements:
 
 - [ ] Setup an API authentication method (JWT or OAuth)

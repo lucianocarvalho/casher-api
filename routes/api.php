@@ -25,6 +25,8 @@ Route::resource('movimentations', 'MovimentationController');
 Route::post('login', 'UserController@login');
 Route::get('summary/{id}', 'MovimentationController@summary');
 
+Route::resource('categories', 'CategoryController');
+Route::get('categories/list/{user_id}', 'CategoryController@list');
 
 Route::get('/', function () {
 	return response()->json(['message' => 'Jobs API', 'status' => 'Connected']);;
