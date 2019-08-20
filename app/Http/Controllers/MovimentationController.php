@@ -42,6 +42,10 @@ class MovimentationController extends Controller
 	public function store( Request $request )
 	{
 		$movimentation = new Movimentation( $request->all() );
+
+		if( ! isset( $request->date ) )
+			$movimentation->date = date('Y-m-d H:i:s');
+
 		$movimentation->save();
 
 		return response()->json($movimentation, 201);
