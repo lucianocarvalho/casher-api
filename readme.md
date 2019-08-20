@@ -225,7 +225,7 @@ Update a specific user.
 </details>
 
 <details>
-<summary>GET /api/summary/{id}</summary>
+<summary>GET /api/summary/{user_id}</summary>
 <br>
 Displays a user summary (monthly balance, number of entries, etc).
 
@@ -269,7 +269,7 @@ Displays a user summary (monthly balance, number of entries, etc).
 </details>
 
 <details>
-<summary>GET /api/movimentations/{id}</summary>
+<summary>GET /api/movimentations/{user_id}</summary>
 <br>
 List all movimentations of a specific user.
 
@@ -335,7 +335,8 @@ Create a new movimentation.
 	"type": "D",
 	"name": "Foo bar",
 	"value": 99.21,
-	"date": "2019-08-20 21:23:12"
+	"date": "2019-08-20 21:23:12",
+	"category_id": 1
 }
 ```
 
@@ -348,7 +349,8 @@ Create a new movimentation.
 	"type": "D",
 	"name": "Foo bar",
 	"value": 99.21,
-	"date": "2019-08-20 21:23:12"
+	"date": "2019-08-20 21:23:12",
+	"category_id": 1
 }
 ```
 </details>
