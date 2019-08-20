@@ -117,8 +117,6 @@ Auth login.
 ```
 </details>
 
-***
-
 <details>
 <summary>POST /api/users</summary>
 <br>
@@ -158,8 +156,6 @@ Register a new user.
 ```
 </details>
 
-***
-
 <details>
 <summary>DELETE /api/users/{id}</summary>
 <br>
@@ -188,8 +184,6 @@ Delete a specific user.
 }
 ```
 </details>
-
-***
 
 <details>
 <summary>PUT /api/users/{id}</summary>
@@ -229,8 +223,6 @@ Update a specific user.
 }
 ```
 </details>
-
-***
 
 <details>
 <summary>GET /api/summary/{id}</summary>
@@ -275,8 +267,6 @@ Displays a user summary (monthly balance, number of entries, etc).
 }
 ```
 </details>
-
-***
 
 <details>
 <summary>GET /api/movimentations/{id}</summary>
@@ -331,8 +321,6 @@ List all movimentations of a specific user.
 ```
 </details>
 
-***
-
 <details>
 <summary>POST /api/movimentations</summary>
 <br>
@@ -365,8 +353,6 @@ Create a new movimentation.
 ```
 </details>
 
-***
-
 <details>
 <summary>DELETE /api/movimentations/{id}</summary>
 <br>
@@ -384,8 +370,6 @@ Delete a specific movimentation.
 }
 ```
 </details>
-
-***
 
 <details>
 <summary>GET /api/categories/list/{user_id}</summary>
@@ -418,8 +402,6 @@ List all categories from a specific user.
 ```
 </details>
 
-***
-
 <details>
 <summary>POST /api/categories</summary>
 <br>
@@ -447,8 +429,6 @@ Create a new category.
 }
 ```
 </details>
-
-***
 
 <details>
 <summary>DELETE /api/categories/{id}</summary>
