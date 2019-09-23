@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMovimentationsTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMovimentationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('movimentations', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('type', 1);
             $table->string('name');
@@ -35,6 +35,6 @@ class CreateMovimentationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movimentations');
+        Schema::dropIfExists('transactions');
     }
 }

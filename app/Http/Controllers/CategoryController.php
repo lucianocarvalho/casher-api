@@ -2,39 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\Category;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
+use App\Services\Transaction\CategoryService;
 
 class CategoryController extends Controller
 {
-	public function list( $user_id ) : JsonResponse
-	{
-		return response()->json( Category::where('user_id', $user_id )->get() );
-	}
+    private $categoryService;
 
-	public function store( Request $request ) : JsonResponse
-	{
-		$category = new Category( $request->all() );
-		$category->save();
+    /**
+     * @param App\Services\Transaction\CategoryService $categoryService
+     */
+    public function __construct( CategoryService $categoryService )
+    {
+        $this->categoryService = $categoryService;
+    }
 
-		return response()->json($category, 201);
-	}
+    /**
+     * @param int $user_id
+     * @return array
+     */
+    public function list( $user_id )
+    {
+        return $this->categoryService->list( $user_id );
+    }
 
-	public function destroy( $id ) : JsonResponse
-	{
-		$category = Category::find($id);
+    /**
+     * @param Illuminate\Http\Request $request
+     * @return App\Entities\Category
+     */
+    public function store( Request $request )
+    {
+        return $this->categoryService->store( $request );
+    }
 
-		if( ! $category ) {
-            return response()->json([
-                'message'   => 'Record not found',
-            ], 404);
-        }
-
-        if( $category->delete() ) {
-			return response()->json([
-        		'status' => true
-        	], 204);
-        }
-	}
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function destroy( $id )
+    {
+        return $this->categoryService->destroy( $id );
+    }
 }

@@ -16,10 +16,10 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('movimentation_id')->unsigned();
+            $table->bigInteger('transaction_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('movimentation_id')->references('id')->on('movimentations')->onDelete('cascade');
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
         });
     }
 

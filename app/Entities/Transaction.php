@@ -4,14 +4,14 @@ namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Transaction extends Model
 {
     /**
      * Table name.
      * 
      * @var string
      */
-    protected $table = 'tags';
+    protected $table = 'transactions';
 
     /**
      * Guarded fields.
@@ -28,7 +28,7 @@ class Tag extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'transaction_id'
+        'type', 'name', 'value', 'date', 'category_id', 'user_id'
     ];
 
     /**
@@ -37,6 +37,18 @@ class Tag extends Model
      * @var array
      */
     protected $casts = [
-        'name' => 'string',
+        'type' => 'string',
+        'value' => 'double',
+        'date' => 'datetime'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo( App\Entities\User::class );
+    }
+
+    public function category()
+    {
+        return $this->belongsTo( App\Entities\Category::class );
+    }
 }

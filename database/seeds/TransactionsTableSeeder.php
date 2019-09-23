@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MovimentationsTableSeeder extends Seeder
+class TransactionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class MovimentationsTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(\App\Entities\Movimentation::class, 10)->create();
+        factory(\App\Entities\Transaction::class, 10)->create();
     }
 }

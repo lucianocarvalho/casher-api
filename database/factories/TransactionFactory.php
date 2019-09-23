@@ -1,12 +1,12 @@
 <?php
 
-use App\Entities\Movimentation;
+use App\Entities\Transaction;
 use Faker\Generator as Faker;
 
-$factory->define(Movimentation::class, function (Faker $faker) {
+$factory->define(Transaction::class, function (Faker $faker) {
 
-	$categories = \App\Entities\Category::pluck('id')->toArray();
-	$users = \App\Entities\User::pluck('id')->toArray();
+    $categories = \App\Entities\Category::pluck('id')->toArray();
+    $users = \App\Entities\User::pluck('id')->toArray();
 
     return [
         'type' => $faker->randomElement(array('C', 'D')),
