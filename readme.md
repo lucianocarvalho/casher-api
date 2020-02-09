@@ -46,17 +46,27 @@ git clone https://github.com/lucianocarvalho/casher-api
 cd casher-api && docker-compose -f docker/docker-compose.yml up -d
 ```
 
-3. Run the migrations:
+3. Copy `.env.example` to `.env`
+```bash
+cp src/.env.example src/.env
+```
+
+4. Run the migrations:
 ```bash
 docker exec -ti api.casher.dev php artisan migrate
 ```
 
-4. Run the seeds:
+5. If you want, run the seeds:
 ```bash
 docker exec -ti api.casher.dev php artisan db:seed
 ```
 
-5. **Open http://localhost in your browser.**
+6. Install the dependencies using composer:
+```bash
+docker exec -ti api.casher.dev composer install
+```
+
+7. **Open http://localhost in your browser.**
 
 ## Documentation
 
