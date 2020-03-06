@@ -19,6 +19,7 @@ steps:
       - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
       - cd src
       - composer install --prefer-dist --no-suggest
+      - php artisan key:generate
   - name: unit-tests
     pull: if-not-exists
     image: php:7.4-cli
