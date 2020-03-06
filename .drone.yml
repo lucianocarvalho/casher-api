@@ -22,7 +22,7 @@ steps:
       - mv .env.example .env
   - name: unit-tests
     pull: if-not-exists
-    image: php:7.4-cli
+    image: php:7.4-fpm-alpine
     commands:
       - cd src
       - ./vendor/bin/phpunit
