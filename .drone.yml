@@ -1,0 +1,26 @@
+kind: pipeline
+name: default
+type: docker
+trigger:
+  event:
+    - pull_request
+    - push
+  branch:
+    - master
+platform:
+  os: linux
+  arch: amd64
+steps:
+  - name: install-dependencies
+    pull: if-not-exists
+    image: php:7.4-cli
+    commands:
+      - cd src
+      - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+      - composer install --prefer-dist --no-progress --no-suggest
+  - name: unit-tests
+    pull: if-not-exists
+    image: php:7.4-cli
+    commands:
+      - cd src
+      - ./vendor/bin/phpunit
