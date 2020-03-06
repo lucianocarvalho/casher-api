@@ -13,11 +13,12 @@ platform:
 steps:
   - name: install-dependencies
     pull: if-not-exists
-    image: php:7.4-cli
+    image: php:7.4-fpm-alpine
     commands:
-      - cd src
+      - apk --update add --no-cache git
       - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-      - composer install --prefer-dist --no-progress --no-suggest
+      - cd src
+      - composer install --prefer-dist --no-suggest
   - name: unit-tests
     pull: if-not-exists
     image: php:7.4-cli
