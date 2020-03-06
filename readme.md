@@ -1,4 +1,5 @@
 # Casher API
+[![Build Status](https://cloud.drone.io/api/badges/lucianocarvalho/casher-api/status.svg)](https://cloud.drone.io/lucianocarvalho/casher-api)
 
 Casher is an app to manage all your bills.
 
