@@ -4,15 +4,6 @@
     <a href="https://cloud.drone.io/lucianocarvalho/casher-api">
         <img src="https://cloud.drone.io/api/badges/lucianocarvalho/casher-api/status.svg" />
     </a>
-    <a href="https://scrutinizer-ci.com/g/lucianocarvalho/casher-api/?branch=master">
-        <img src="https://scrutinizer-ci.com/g/lucianocarvalho/casher-api/badges/quality-score.png?b=master" />
-    </a>
-    <a href="https://scrutinizer-ci.com/g/lucianocarvalho/casher-api/?branch=master">
-        <img src="https://scrutinizer-ci.com/g/lucianocarvalho/casher-api/badges/coverage.png?b=master" />
-    </a>
-    <a href="https://scrutinizer-ci.com/g/lucianocarvalho/casher-api/badges/code-intelligence.svg?b=master">
-        <img src="https://scrutinizer-ci.com/g/lucianocarvalho/casher-api/badges/coverage.png?b=master" />
-    </a>
 </p>
 
 Casher is an app to manage all your bills.
