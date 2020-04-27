@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  api.casher.dev:
+    container_name: api.casher.dev
+    build:
+      context: .
+    volumes:
+      - ./src:/app
+    ports:
+      - "9090:80"
+
+  db.casher.dev:
+    container_name: db.casher.dev
+    build:
+      context: ./docker/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped

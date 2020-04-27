@@ -32,7 +32,6 @@ This project is being developed in conjunction with the [@VictorioDev](https://g
 - **[docker-compose](https://docs.docker.com/compose/)** already installed.
 
 #### Containers:
-- **nginx** running `nginx:alpine`
 - **api.casher.dev** running `php:7.4-fpm-alpine`
 - **db.casher.dev** running `postgres:latest`
 
@@ -49,7 +48,7 @@ git clone https://github.com/lucianocarvalho/casher-api
 
 2. Setup the application using Docker:
 ```bash
-cd casher-api && docker-compose -f docker/docker-compose.yml up -d
+cd casher-api && docker-compose up -d
 ```
 
 3. Copy `.env.example` to `.env`
